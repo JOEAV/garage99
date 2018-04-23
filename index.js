@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.listen(1337,()=>{
     console.log('garageBackend running on port 3000')
-})
+});
 
 
 // Adds support for GET requests to our webhook
