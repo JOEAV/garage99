@@ -6,8 +6,8 @@ const app =express();
 app.use(bodyParser.json);
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.listen(1337,()=>{
-    console.log('garageBackend running on port 3000')
+app.listen(process.env.PORT || 5000,()=>{
+    console.log(`garageBackend running on port ${process.env.PORT || 5000}`)
 });
 
 
