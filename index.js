@@ -15,6 +15,7 @@ app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 // Accepts POST requests at /webhook endpoint
 app.post("/webhook", function (req, res) {
+    console.log(req.body.object);
     // Make sure this is a page subscription
     if (req.body.object == "page") {
         // Iterate over each entry
