@@ -62,7 +62,7 @@ app.get('/webhook', (req, res) => {
 function processPostback(event) {
     let senderId = event.sender.id;
     let payload = event.postback.payload;
-
+    console.log(payload);
     if (payload === "Greeting") {
         // Get user's first name from the User Profile API
         // and include it in the greeting
