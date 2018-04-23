@@ -60,8 +60,8 @@ app.get('/webhook', (req, res) => {
 });
 
 function processPostback(event) {
-    var senderId = event.sender.id;
-    var payload = event.postback.payload;
+    let senderId = event.sender.id;
+    let payload = event.postback.payload;
 
     if (payload === "Greeting") {
         // Get user's first name from the User Profile API
@@ -78,11 +78,11 @@ function processPostback(event) {
             if (error) {
                 console.log("Error getting user's name: " +  error);
             } else {
-                var bodyObj = JSON.parse(body);
-                name = bodyObj.first_name;
-                greeting = "Hi " + name + ". ";
+                let bodyObj = JSON.parse(body);
+                let name = bodyObj.first_name;
+                let greeting = "Hi " + name + ". ";
             }
-            var message = greeting + "My name is SP Movie Bot. I can tell you various details regarding movies. What movie would you like to know about?";
+            let message = greeting + "My name is SP Movie Bot. I can tell you various details regarding movies. What movie would you like to know about?";
             sendMessage(senderId, {text: message});
         });
     }
